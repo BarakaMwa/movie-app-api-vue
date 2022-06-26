@@ -30,9 +30,6 @@
                     <a class="nav-link link text-white display-4" href="https://mobiri.se"><span class="mobi-mbri mobi-mbri-like mbr-iconfont mbr-iconfont-btn"></span>
                         Liked Movies</a>
                 </li></ul>
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-white-outline display-4" href="https://mobiri.se"><span class="mobi-mbri mobi-mbri-like mbr-iconfont mbr-iconfont-btn" style="color: rgb(46, 137, 237);"></span>
-                    </a> <a class="btn btn-sm btn-white-outline display-4" href="https://mobiri.se"><span class="mobi-mbri mobi-mbri-close mbr-iconfont mbr-iconfont-btn" style="color: rgb(204, 41, 82);"></span>
-                    </a></div>
         </div>
     </nav>
 </section>

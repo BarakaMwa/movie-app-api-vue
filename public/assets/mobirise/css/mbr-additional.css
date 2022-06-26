@@ -1199,7 +1199,7 @@ section.lazy-placeholder:after {
 .cid-t9OnTOm56F .card-wrapper {
   height: 100%;
   padding-bottom: 2rem;
-  background: #6cceef;
+  background: transparent;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: box-shadow 0.3s;
 }
