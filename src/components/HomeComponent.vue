@@ -1,6 +1,6 @@
 /* eslint-disable vue/multi-word-component-names */
 <template>
-    <section v-on:load="getMovies()" >
+    <section v-on:loads="getMovies()" >
         <NavBar/>
         <Header :title=intro subTitle="Checkout Movie List"/>
         <MovieList :movies=movies />
@@ -21,7 +21,7 @@
         },
         data() {
             return {
-                movies: {}
+                movies: []
             }
         },
         name: 'HomeComponent',

@@ -8,7 +8,7 @@
                 <div class="media-container-row row justify-content-start">
 
 
-                    <div class="card p-3 col-6 col-md-6 col-lg-3 movie-card animated animate__pulse mt-5 mb-5"
+                    <div class="card p-3 col-6 col-md-6 col-lg-2 movie-card animated animate__pulse mt-5 mb-5 p-4"
                          v-for="item in movieList"
                          :key="item.id">
                         <div class="card-wrapper p-0">
@@ -50,11 +50,10 @@
             LikeButton, Search
         }
         , props: {
-            movies: Object
+            movies: Array
         }, methods: {
             getMovie(movie) {
                 console.log(movie)
-                localStorage.setItem('view-movie-vue', JSON.stringify(movie))
             }
         }
 
