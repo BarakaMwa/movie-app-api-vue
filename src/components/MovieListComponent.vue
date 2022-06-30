@@ -15,13 +15,13 @@
                             <div class="card-img" v-on:click=getMovie(item)>
 
                                 <img :src="'https://image.tmdb.org/t/p/w300'+item.poster_path" :alt=item.title
-                                     :title=item.title />
+                                     :title=item.title/>
                             </div>
                             <div class="card-box">
 
                             </div>
                             <div class="mbr-section-btn text-center p-0">
-                                <LikeButton :movie=item />
+                                <LikeButton :movie=item/>
                             </div>
                         </div>
                     </div>
