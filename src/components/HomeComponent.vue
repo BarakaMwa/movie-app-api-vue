@@ -1,9 +1,9 @@
 /* eslint-disable vue/multi-word-component-names */
 <template>
-    <section v-on:loads="getMovies()">
+    <section v-on:load="getMovies('')" >
         <NavBar/>
         <Header :title=intro subTitle="Checkout Movie List"/>
-        <MovieList :movies=movies/>
+        <MovieList :movies=movies />
         <Footer info="By Baraka Mwang'amba"/>
     </section>
 
@@ -16,7 +16,7 @@
 
     export default {
 
-        mounted: function () {
+        mounted() {
             this.getMovies() //method1 will execute at pageload
         },
         data() {
@@ -32,14 +32,22 @@
             NavBar, Header, Footer, MovieList
         },
         methods: {
-            async getMovies() {
+            async getMovies(search) {
 
-                const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17');
+                let response;
+                
 
-                const data = await response.json();
-                console.log(data.results);
-                this.movies = data.results;
-                console.log(this.movies);
+                if(search === '' || search === null || search === undefined){
+                    response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17');
+                }
+
+                // const data = await response.json();
+                const results = await response.json();
+                // console.log(data.results);
+                console.log(results.results);
+                // this.movies = data.results;
+                this.movies = results.results;
+                // console.log(this.movies);
 
             }
         },

@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <input type="email" name="email" placeholder="Search" data-form-field="Email"
-                                   required="required" class="form-control display-7">
+                                   required="required" class="form-control display-7" v-on:change="getMovies(this.value)">
                         </div>
                     </div>
                 </div>
@@ -26,11 +26,15 @@
 </template>
 
 <script>
+
     export default {
 
         name: "SearchComponent",
         props: {},
-        components: {}
+        components: {},
+        methods:{
+
+         }
     }
 </script>
 <style scoped>
