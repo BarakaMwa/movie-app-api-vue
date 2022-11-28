@@ -3,7 +3,7 @@
     <section v-on:load="getMovies('')" >
         <NavBar/>
         <Header :title=intro subTitle="Checkout Movie List"/>
-        <MovieList :movies=movies />
+        <MovieList :movies=moviesList />
         <Footer info="By Baraka Mwang'amba"/>
     </section>
 
@@ -21,7 +21,7 @@
         },
         data() {
             return {
-                movies: []
+                moviesList: [],
             }
         },
         name: 'HomeComponent',
@@ -34,20 +34,21 @@
         methods: {
             async getMovies(search) {
 
-                let response;
-                
+                let url;
 
                 if(search === '' || search === null || search === undefined){
-                    response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17');
+                    url = 'https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17';
+                }else {
+                    url = "https://api.themoviedb.org/3/search/movie?api_key=d0f5f2e135336200362af8a1a73acb17&query=" + search;
                 }
 
-                // const data = await response.json();
-                const results = await response.json();
-                // console.log(data.results);
-                console.log(results.results);
-                // this.movies = data.results;
-                this.movies = results.results;
+                const response = await fetch(url);
+
+                const data = await response.json();
+                console.log(data.results);
+                this.moviesList = data.results;
                 // console.log(this.movies);
+                return data.results;
 
             }
         },

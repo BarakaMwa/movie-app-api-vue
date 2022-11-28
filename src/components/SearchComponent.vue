@@ -16,7 +16,8 @@
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <input type="email" name="email" placeholder="Search" data-form-field="Email"
-                                   required="required" class="form-control display-7" v-on:change="getMovies(this.value)">
+                                   required="required" class="form-control display-7"
+                                   v-on:keydown=getMoviesFunction($event.target.value)  />
                         </div>
                     </div>
                 </div>
@@ -24,17 +25,26 @@
         </div>
     </section>
 </template>
-
 <script>
+    import * as home from './HomeComponent';
 
     export default {
 
+        mounted() {
+            this.getMoviesFunction()
+        },
         name: "SearchComponent",
         props: {},
         components: {},
-        methods:{
+        methods: {
+            async getMoviesFunction(search) {
 
-         }
+                console.log(search);
+                const movies = await home.default.methods.getMovies(search)
+
+                console.log(movies)
+            }
+        }
     }
 </script>
 <style scoped>
